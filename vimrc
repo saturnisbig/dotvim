@@ -99,7 +99,7 @@ set history=400
 
 filetype off
 "Enable filetype plugin
-filetype plugin on
+:filetype plugin on
 filetype indent on
 
 "Set to auto read when a file is changed from the outside
@@ -130,6 +130,16 @@ let g:syntastic_python_checkers = ['flake8', 'pylint']
 " set 256 colors 
 set t_Co=256
 set magic
+
+" Vimwiki to use markdow syntax to replace wiki syntax
+let g:vimwiki_list = [
+      \{'path': '~/Dropbox/Wiki_ios/Default/',
+      \ 'path_html': '~/Documents/Wiki/Sites/wiki/',
+      \ 'html_footer': '~/Documents/Wiki/Default/footer.tpl',
+      \ 'html_header': '~/Documents/Wiki/Default/header.tpl',
+      \ 'syntax': 'markdown',
+      \ 'auto_export': 0}
+      \]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -477,7 +487,7 @@ function! Python_Eval_VSplit() range
 endfunction
 au FileType python vmap <F7> :call Python_Eval_VSplit()<cr> 
 " use templates for new .py file
-autocmd BufNewFile *.py 0r ~/.vim/templates/python/tpl.py
+"autocmd BufNewFile *.py 0r ~/.vim/templates/python/tpl.py
 
 """""""""""""""""""""""""""""""
 " => Vim section
@@ -513,8 +523,8 @@ au FileType javascript inoremap <buffer> $c /**<cr><space><cr>**/<esc>ka
 """"""""""""""""""""""""""""""
 " => HTML
 """""""""""""""""""""""""""""""
-au FileType html,cheetah set ft=xml
-au FileType html,cheetah set syntax=html
+"au FileType html,cheetah set ft=xml
+"au FileType html,cheetah set syntax=html
 
 
 """"""""""""""""""""""""""""""
@@ -543,7 +553,7 @@ autocmd BufNewFile,BufRead *.scm vnoremap <C-t> <esc>`>a)<esc>`<i(pretty-print <
   autocmd FileType python inorea <buffer> cfor <c-r>=IMAP_PutTextWithMovement("for <++> in <++>:\n<++>")<cr>
   autocmd FileType python inorea <buffer> cif <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>")<cr>
   autocmd FileType python inorea <buffer> cifelse <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>\nelse:\n<++>")<cr>
-  autocmd FileType python source ~/.vim/bundle/snipMate/snippets/support_functions.vim
+  "autocmd FileType python source ~/.vim/bundle/vim-snipmate/snippets/python.snippets
   
   """""""""""""""""""""""""""""""
   " => JavaScript
@@ -634,32 +644,34 @@ autocmd BufReadPost *.pdf silent %!pdftotext "%" -nopgbrk -layout -q -eol unix -
 " map added to quick insert current time
 map <F6> <Esc>a<c-r>=strftime("%Y-%m-%d %H:%M:%S") 
 
+let g:snipMate = {}
+source ~/.vim/bundle/vim-snipmate/plugin/snipMate.vim
 "2011年06月01日 21:36:24 Teddy Fish -- set snipMate
 "let g:snippets_dir='~/.vim/bundle/snipMate/snippets/'
 "autocmd FileType html set ft=html.markdown
 
 " add php zend snippets 2011年07月22日 21:34:51 
 " ExtractSnipsFile('~/.vim/bundle/snipMate/snippets/zend', 'php') 
-let g:snips_author = 'Teddy'
+"let g:snips_author = 'Teddy'
 "indent with lispindent.lisp 2011年06月18日 11:13:02 
 "autocmd FileType lisp,scheme,art setlocal equalprg=lispindent.lisp
 "set equalprg=lispindent.lisp
 
 " Zen coding
-let g:user_zen_settings = {
-      \ 'indentation' : ' ',
-      \ 'perl' : {
-      \   'alias' : {
-      \     'req' : 'require'
-      \   },
-      \   'snippets' : {
-      \     'use':'use strict\n use warnings\n\n',
-      \     'warn': "warn \"|\";",
-      \  }
-      \}
-      \}
-let g:user_zen_expandabbr_key='<c-y>'
-let g:user_zen_complete_tag=1
+"let g:user_zen_settings = {
+"      \ 'indentation' : ' ',
+"      \ 'perl' : {
+"      \   'alias' : {
+"      \     'req' : 'require'
+"      \   },
+"      \   'snippets' : {
+"      \    'use':'use strict\n use warnings\n\n',
+"      \     'warn': "warn \"|\";",
+"      \  }
+"      \}
+"      \}
+"let g:user_zen_expandabbr_key='<c-y>'
+"let g:user_zen_complete_tag=1
 " Teddy Fish 2012年03月31日 20:02:58 
 " When quit and reopen the file, return to the last edit place when quit.
 " au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
