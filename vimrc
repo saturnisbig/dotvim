@@ -436,7 +436,7 @@ autocmd FileType markdown,html setl shiftwidth=4 sts=4 ts=4
 " Teddy Fish added for python indent
 autocmd FileType python setl ts=4 et sta sw=4 sts=4
 " turn on python syntax highlight 2012年04月12日 01:04:17 
-let python_highlight_all=1
+let python_highlight_all = 1
 "set iskeyword+=:
 
 set smarttab
