@@ -435,6 +435,9 @@ au FileType java,php setl tabstop=4
 autocmd FileType markdown,html setl shiftwidth=4 sts=4 ts=4
 " Teddy Fish added for python indent
 autocmd FileType python setl ts=4 et sta sw=4 sts=4
+" PEP-8 friendly 2013-12-16 22:22:52 
+" see http://segmentfault.com/q/1010000000170746
+autocmd FileType python set textwidth=79 
 " turn on python syntax highlight 2012年04月12日 01:04:17 
 let python_highlight_all = 1
 "set iskeyword+=:
