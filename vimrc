@@ -490,7 +490,7 @@ function! Python_Eval_VSplit() range
 endfunction
 au FileType python vmap <F7> :call Python_Eval_VSplit()<cr> 
 " use templates for new .py file
-"autocmd BufNewFile *.py 0r ~/.vim/templates/python/tpl.py
+autocmd BufNewFile *.py 0r ~/.vim/templates/python_tpl.py
 
 """""""""""""""""""""""""""""""
 " => Vim section
