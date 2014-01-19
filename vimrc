@@ -556,7 +556,6 @@ autocmd BufNewFile,BufRead *.scm vnoremap <C-t> <esc>`>a)<esc>`<i(pretty-print <
   autocmd FileType python inorea <buffer> cfor <c-r>=IMAP_PutTextWithMovement("for <++> in <++>:\n<++>")<cr>
   autocmd FileType python inorea <buffer> cif <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>")<cr>
   autocmd FileType python inorea <buffer> cifelse <c-r>=IMAP_PutTextWithMovement("if <++>:\n<++>\nelse:\n<++>")<cr>
-  "autocmd FileType python source ~/.vim/bundle/vim-snipmate/snippets/python.snippets
   
   """""""""""""""""""""""""""""""
   " => JavaScript
@@ -648,7 +647,11 @@ autocmd BufReadPost *.pdf silent %!pdftotext "%" -nopgbrk -layout -q -eol unix -
 map <F6> <Esc>a<c-r>=strftime("%Y-%m-%d %H:%M:%S") 
 
 let g:snipMate = {}
-source ~/.vim/bundle/vim-snipmate/plugin/snipMate.vim
+"source ~/.vim/bundle/vim-snipmate/plugin/snipMate.vim
+"2014-01-19 12:33:59 snipMate only trigger with <C-J>, <tab> work with Supertab
+"See ~/.vim/bundle/vim-snipmate/doc/SnipMate.txt line 141
+:imap <C-J> <Plug>snipMateNextOrTrigger
+:smap <C-J> <Plug>snipMateNextOrTrigger
 "2011年06月01日 21:36:24 Teddy Fish -- set snipMate
 "let g:snippets_dir='~/.vim/bundle/snipMate/snippets/'
 "autocmd FileType html set ft=html.markdown
