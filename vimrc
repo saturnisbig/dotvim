@@ -193,7 +193,8 @@ else
   "let g:solarized_termcolors=256
   "colorscheme solarized
   "colorscheme peaksea 
-  colorscheme molokai
+  "colorscheme molokai
+  colorscheme Tomorrow-Night
 endif
 
 "Some nice mapping to switch syntax (useful if one mixes different languages in one file)
