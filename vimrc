@@ -119,7 +119,7 @@ nmap <leader>f :find<cr>
 "Fast reloading of the .vimrc
 "map <leader>s :source! ~/.vim/vimrc<cr>
 "Fast editing of .vimrc
-map <leader>e :e! ~/.vim/vimrc<cr>
+map <leader>e :e! ~/.vimrc<cr>
 "When .vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vim/vimrc
 
@@ -193,8 +193,10 @@ else
   "let g:solarized_termcolors=256
   "colorscheme solarized
   "colorscheme peaksea 
-  "colorscheme molokai
-  colorscheme Tomorrow-Night
+  colorscheme molokai
+  "colorscheme Tomorrow-Night
+  "colorscheme Tomorrow-Night-Bright
+  "colorscheme Tomorrow-Night-Eighties 
 endif
 
 "Some nice mapping to switch syntax (useful if one mixes different languages in one file)
@@ -653,6 +655,7 @@ let g:snipMate = {}
 "See ~/.vim/bundle/vim-snipmate/doc/SnipMate.txt line 141
 :imap <C-J> <Plug>snipMateNextOrTrigger
 :smap <C-J> <Plug>snipMateNextOrTrigger
+let g:SuperTabDefaultCompletionType = "context"
 "2011年06月01日 21:36:24 Teddy Fish -- set snipMate
 "let g:snippets_dir='~/.vim/bundle/snipMate/snippets/'
 "autocmd FileType html set ft=html.markdown
