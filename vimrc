@@ -684,3 +684,13 @@ let g:snipMate = {}
 " au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 " airline plugin
 let g:airline#extension#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+
+let g:airline_theme="molokai"
+"let g:airline_section_z = ''%3pp %l:%c %L'
+function! AirlineInit()
+  call airline#parts#define_raw('linenr', '%l')
+  call airline#parts#define_accent('linenr', 'bold')
+  let g:airline_section_z = airline#section#create(['linenr', ':%c', '%3p%%', g:airline_symbols.linenr, '%L '])
+endfunction
+autocmd VimEnter * call AirlineInit()
