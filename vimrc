@@ -194,8 +194,32 @@ else
   "colorscheme solarized
   "colorscheme peaksea 
   "colorscheme molokai
-  colorscheme Tomorrow-Night
+  "colorscheme Tomorrow-Night
+  "ColorschemeWeekly()
+  if(strftime("%w") <= 4)
+    colorscheme molokai
+  elseif(strftime("%w") == 5)
+    colorscheme solarized
+  else
+    colorscheme Tomorrow-Night
+  endif
 endif
+
+"fun! ColorschemeWeekly()
+"  day_of_week = strftime("%W")
+"  if day_of_week == 1
+"    colorscheme = Tomorrow-Night
+"  endif
+"  if day_of_week == 2
+"    colorscheme solarized
+"  endif
+"  if day_of_week == 3
+"    colorscheme peaksea
+"  endif
+"  if day_of_week > 3
+"    colorscheme molokai
+"  endif
+"endfun
 
 "Some nice mapping to switch syntax (useful if one mixes different languages in one file)
 map <leader>1 :set syntax=cheetah<cr>
