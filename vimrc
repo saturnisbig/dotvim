@@ -119,7 +119,7 @@ nmap <leader>f :find<cr>
 "Fast reloading of the .vimrc
 "map <leader>s :source! ~/.vim/vimrc<cr>
 "Fast editing of .vimrc
-map <leader>e :e! ~/.vim/vimrc<cr>
+map <leader>e :e! ~/.vimrc<cr>
 "When .vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vim/vimrc
 
@@ -195,7 +195,6 @@ else
   "colorscheme peaksea 
   "colorscheme molokai
   "colorscheme Tomorrow-Night
-  "ColorschemeWeekly()
   if(strftime("%w") <= 4)
     colorscheme molokai
   elseif(strftime("%w") == 5)
@@ -205,21 +204,6 @@ else
   endif
 endif
 
-"fun! ColorschemeWeekly()
-"  day_of_week = strftime("%W")
-"  if day_of_week == 1
-"    colorscheme = Tomorrow-Night
-"  endif
-"  if day_of_week == 2
-"    colorscheme solarized
-"  endif
-"  if day_of_week == 3
-"    colorscheme peaksea
-"  endif
-"  if day_of_week > 3
-"    colorscheme molokai
-"  endif
-"endfun
 
 "Some nice mapping to switch syntax (useful if one mixes different languages in one file)
 map <leader>1 :set syntax=cheetah<cr>
@@ -677,6 +661,7 @@ let g:snipMate = {}
 "See ~/.vim/bundle/vim-snipmate/doc/SnipMate.txt line 141
 :imap <C-J> <Plug>snipMateNextOrTrigger
 :smap <C-J> <Plug>snipMateNextOrTrigger
+let g:SuperTabDefaultCompletionType = "context"
 "2011年06月01日 21:36:24 Teddy Fish -- set snipMate
 "let g:snippets_dir='~/.vim/bundle/snipMate/snippets/'
 "autocmd FileType html set ft=html.markdown
