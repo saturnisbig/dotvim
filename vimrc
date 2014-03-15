@@ -700,6 +700,6 @@ let g:airline_theme="molokai"
 function! AirlineInit()
   call airline#parts#define_raw('linenr', '%l')
   call airline#parts#define_accent('linenr', 'bold')
-  let g:airline_section_z = airline#section#create(['linenr', ':%c', '%3p%%', g:airline_symbols.linenr, '%L '])
+  let g:airline_section_z = airline#section#create(['linenr', ':%c ', '%3p%%', g:airline_symbols.linenr, '%L '])
 endfunction
 autocmd VimEnter * call AirlineInit()
