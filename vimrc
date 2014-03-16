@@ -195,12 +195,14 @@ else
   "colorscheme peaksea 
   "colorscheme molokai
   "colorscheme Tomorrow-Night
-  if(strftime("%w") <= 4)
+  if(strftime("%w" == 0))
+    colorscheme Tomorrow-Night-Eighties
+  elseif(strftime("%w") <= 4)
     colorscheme molokai
   elseif(strftime("%w") == 5)
-    colorscheme solarized
-  else
     colorscheme Tomorrow-Night
+  else
+    colorscheme solarized
   endif
 endif
 
