@@ -195,14 +195,12 @@ else
   "colorscheme peaksea 
   "colorscheme molokai
   "colorscheme Tomorrow-Night
-  if(strftime("%w" == 0))
-    colorscheme Tomorrow-Night-Eighties
-  elseif(strftime("%w") <= 4)
+  if(strftime("%w") == 0 || strftime("%w") == 1)
     colorscheme molokai
-  elseif(strftime("%w") == 5)
-    colorscheme Tomorrow-Night
+  elseif(strftime("%w") <= 4 && strftime("%w") > 1)
+    colorscheme peaksea
   else
-    colorscheme solarized
+    colorscheme Tomorrow-Night-Eighties
   endif
 endif
 
@@ -268,8 +266,8 @@ set backspace=eol,start,indent
 "Bbackspace and cursor keys wrap to
 set whichwrap+=<,>,h,l
 
-"Ignore case when searching
-set ignorecase
+"Ignore case when searching, smartcase for case sensitive if Caps in search
+set ignorecase smartcase
 set incsearch
 
 "Set magic on
