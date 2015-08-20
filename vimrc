@@ -509,7 +509,7 @@ autocmd FileType vim set nofen
 """"""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
-au FileType javascript so ~/.vim/bundle/javascript.vim/syntax/javascript.vim
+"au FileType javascript so ~/.vim/bundle/javascript.vim/syntax/javascript.vim
 function! JavaScriptFold() 
   setl foldmethod=syntax
   setl foldlevelstart=1
@@ -703,3 +703,6 @@ function! AirlineInit()
   let g:airline_section_z = airline#section#create(['linenr', ':%c ', '%3p%%', g:airline_symbols.linenr, '%L '])
 endfunction
 autocmd VimEnter * call AirlineInit()
+
+" vim Jedi - comment out to turn off
+" let g:jedi#auto_initialization = 0
